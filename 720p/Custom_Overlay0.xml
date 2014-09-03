@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="50">
+	<!--onload>RunScript(/allwinner/xbmc-pvr-binhf/share/xbmc/addons/skin.confluence/720p/timechecktest.py)</onload-->
+	<onload>SetSizeManual(size1)</onload>
+	<onload>RunScript(script.signage)</onload>
+	<zorder>2</zorder>
+	<visible>!Window.IsVisible(startup)</visible>
+
+	<controls>
+		<control type="label">
+			<description>current temp Value Units</description>
+			<visible>true</visible>
+			<posx>100</posx>
+			<posy>200</posy>
+			<width>200</width>
+			<height>40</height>
+			<font>font13</font>
+			<textcolor>yellow</textcolor>
+			<align>left</align>
+			<aligny>top</aligny>
+			<label>$INFO[System.FreeMemory]</label>
+			<textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
+		</control>
+	</controls>
+</window>

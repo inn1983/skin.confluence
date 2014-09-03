@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="50" >
+	<!--onload>RunScript(/allwinner/xbmc-pvr-binhf/share/xbmc/addons/skin.confluence/720p/timechecktest.py)</onload-->
+	<onload>RunScript(script.signage)</onload>
+	<!--onload>SetSizeManual(size1)</onload-->
+	<zorder>2</zorder>
+	<visible>!Window.IsVisible(startup)</visible>
+	<controls>
+		
+		<!-- Test -->
+		<!--control type="videowindow">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1000</width>
+			<height>563</height>
+			<visible>!Skin.HasSetting(SignageTest_480) + Skin.HasSetting(SignageTest)</visible>
+		</control-->
+		<!--control type="videowindow">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1000</width>
+			<height>563</height>
+			<visible>Skin.HasSetting(SignageTest_480) + Skin.HasSetting(SignageTest)</visible>
+		</control-->
+		<!--control type="image">
+			<posx>1000</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>special://skin/backgrounds/moon-over-mount-hood-at-dawn-wallpapers.1280x720.jpg</texture>
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<aspectratio>keep</aspectratio>
+			<include>VisibleFadeEffect</include>
+		</control-->
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>special://skin/backgrounds/Capture20111204-211409.jpg</texture>
+			<visible>Skin.HasSetting(SignageTest_imge)</visible>
+			<aspectratio>keep</aspectratio>
+			<include>VisibleFadeEffect</include>
+		</control>
+
+		<!--control type="label">
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<description>SignageTest label</description>
+			<posx>20r</posx>
+			<posy>400</posy>
+			<width>800</width>
+			<height>15</height>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>font50</font>
+			<shadowcolor>black</shadowcolor>
+			<scroll>true</scroll>
+			<textcolor>FFB2D4F5</textcolor>
+			<scrollspeed>100</scrollspeed>
+			<label>$INFO[Weather.Conditions]</label>
+		</control-->
+		
+		<!--include>WeatherHourlyForecastCustomOverlay</include-->
+		
+		<control type="group">
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<posx>900</posx>
+			<posy>170</posy>
+			<control type="label">
+				<description>weather location label</description>
+				<posx>20</posx>
+				<posy>30</posy>
+				<width>460</width>
+				<height>30</height>
+				<font>font13_title</font>
+				<textcolor>white</textcolor>
+				<scroll>false</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[Window(Weather).Property(Location)]</label>
+			</control>
+			<control type="label">
+				<description>update label</description>
+				<posx>10</posx>
+				<posy>50</posy>
+				<width>460</width>
+				<height>35</height>
+				<font>font12</font>
+				<label>$LOCALIZE[31301] - $INFO[Window(Weather).Property(Updated)]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>grey2</textcolor>
+			</control>
+			<control type="label">
+				<description>current temp Value</description>
+				<posx>215</posx>
+				<posy>65</posy>
+				<width>120</width>
+				<height>40</height>
+				<font>WeatherTemp</font>
+				<textcolor>yellow</textcolor>
+				<align>right</align>
+				<aligny>top</aligny>
+				<label>$INFO[Window(Weather).Property(Current.Temperature)]</label>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<description>current temp Value Units</description>
+				<posx>220</posx>
+				<posy>80</posy>
+				<width>100</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>yellow</textcolor>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$INFO[System.TemperatureUnits]</label>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="image">
+				<description>current weather icon</description>
+				<posx>230</posx>
+				<posy>70</posy>
+				<width>120</width>
+				<height>120</height>
+				<info>Window(Weather).Property(Current.ConditionIcon)</info>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<description>current condition label</description>
+				<posx>20</posx>
+				<posy>170</posy>
+				<width>460</width>
+				<height>30</height>
+				<info>Weather.Conditions</info>
+				<wrapmultiline>true</wrapmultiline>
+				<font>font13</font>
+				<textcolor>yellow</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+		</control>
+		
+		<control type="label">
+			<description>Time label</description>
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<posx>60r</posx>
+			<posy>90</posy>
+			<width>250</width>
+			<height>15</height>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>font45caps_title</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<label>$INFO[System.Time]</label>
+			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
+		</control>
+
+		<control type="label">
+			<description>Date label</description>
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<posx>30r</posx>
+			<posy>150</posy>
+			<width>300</width>
+			<height>15</height>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>font28_title</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<label>$INFO[System.Date]</label>
+			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
+		</control>
+
+		<control type="label">
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<description>SignageTest label</description>
+			<posx>1010</posx>
+			<posy>380</posy>
+			<width>1300</width>
+			<height>30</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font25caps_title</font>
+			<shadowcolor>white</shadowcolor>
+			<scroll>1</scroll>
+			<textcolor>green</textcolor>
+			<scrollspeed>60</scrollspeed>
+			<scrollsuffix> - </scrollsuffix>
+			<angle>0</angle>
+			<wrapmultiline>true</wrapmultiline>
+			<label>[B]☆本日のお勧め☆[/B]</label>
+		</control>
+		<control type="label">
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<description>SignageTest label</description>
+			<posx>1010</posx>
+			<posy>410</posy>
+			<width>1300</width>
+			<height>30</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font25caps_title</font>
+			<shadowcolor>white</shadowcolor>
+			<scroll>1</scroll>
+			<textcolor>green</textcolor>
+			<scrollspeed>60</scrollspeed>
+			<scrollsuffix> - </scrollsuffix>
+			<angle>0</angle>
+			<wrapmultiline>true</wrapmultiline>
+			<label>[B]まぐろのカルパッチョ[/B]</label>
+		</control>
+		<control type="image">
+			<posx>1010</posx>
+			<posy>470</posy>
+			<width>230</width>
+			<height>150</height>
+			<texture>special://skin/backgrounds/10058-thumb-300x245-2121.jpg</texture>
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<aspectratio>keep</aspectratio>
+			<include>VisibleFadeEffect</include>
+		</control>
+
+		<!--control type="label">
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<description>SignageTest label</description>
+			<posx>0</posx>
+			<posy>500</posy>
+			<width>1300</width>
+			<height>30</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font45telop</font>
+			<shadowcolor>white</shadowcolor>
+			<scroll>1</scroll>
+			<textcolor>blue</textcolor>
+			<scrollspeed>250</scrollspeed>
+			<scrollsuffix> - </scrollsuffix>
+			<angle>0</angle>
+			<wrapmultiline>false</wrapmultiline>
+			<label>[B]只今、桜木町店で２０％オフキャンペーン実施中！！*********************************[/B]</label>
+		</control-->
+		<!--control type="label">
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<description>SignageTest label</description>
+			<posx>0</posx>
+			<posy>200</posy>
+			<width>1300</width>
+			<height>30</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font45telop</font>
+			<shadowcolor>white</shadowcolor>
+			<scroll>1</scroll>
+			<textcolor>green</textcolor>
+			<scrollspeed>300</scrollspeed>
+			<scrollsuffix> - </scrollsuffix>
+			<angle>0</angle>
+			<wrapmultiline>false</wrapmultiline>
+			<label>[B]只今、桜木町店で２０％オフキャンペーン実施中！！*********************************[/B]</label>
+		</control-->
+		<control type="label" id="101">
+			<visible>Skin.HasSetting(SignageTest)</visible>
+			<description>SignageTest label</description>
+			<posx>0</posx>
+			<posy>650</posy>
+			<width>1280</width>
+			<height>30</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font45telop</font>
+			<!--shadowcolor>white</shadowcolor-->
+			<scroll>1</scroll>
+			<textcolor>white</textcolor>
+			<scrollspeed>150</scrollspeed>
+			<scrollsuffix> - </scrollsuffix>
+			<angle>0</angle>
+			<wrapmultiline>false</wrapmultiline>
+			<label>[B]$INFO[System.twitter][/B]</label>
+		</control>
+		<!-- Global debug grid -->
+
+		<control type="image">
+			<visible>Skin.HasSetting(DebugGrid)</visible>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<!--texture>special://skin/debuggrid720.png</texture-->
+			<texture>special://skin/debuggrid1080.png</texture>
+			<!--width>1920</width>
+			<height>1080</height>
+			<texture>special://skin/debuggrid1080.png</texture-->
+		</control>
+
+		<!-- Window/Dialog debug -->
+
+
+			<!-- Window labels -->
+
+
+
+	</controls>
+</window>
